@@ -1,5 +1,7 @@
 # VPN Infrastructure Dataset
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22308456.svg)](https://doi.org/10.5281/zenodo.22308456)
+
 
 
 An independent, **daily-updated, timestamped** dataset of VPN infrastructure.
@@ -105,6 +107,10 @@ BibTeX:
   note         = {Version 2026-09-03. Licensed under CC BY 4.0}
 }
 ```
+
+**DOI (always the latest version):** [`10.5281/zenodo.22308456`](https://doi.org/10.5281/zenodo.22308456)
+
+**DOI (this exact version):** [`10.5281/zenodo.22308457`](https://doi.org/10.5281/zenodo.22308457)
 
 See also `CITATION.cff` in this repository.
 

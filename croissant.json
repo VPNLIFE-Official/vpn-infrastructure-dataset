@@ -43,6 +43,7 @@
   "open data"
  ],
  "citeAs": "VPN LIFE, “VPN LIFE Dataset (2026-09-03)”, https://vpn-life.com/data/, licensed under CC BY 4.0.",
+ "identifier": "https://doi.org/10.5281/zenodo.22308456",
  "distribution": [
   {
    "@type": "cr:FileObject",

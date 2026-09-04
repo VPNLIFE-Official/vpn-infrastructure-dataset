@@ -13,6 +13,11 @@ authors:
 url: "https://vpn-life.com/data/"
 repository-artifact: "https://vpn-life.com/data/vpn-life-dataset.json"
 license: CC-BY-4.0
+doi: 10.5281/zenodo.22308456
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22308457
+    description: This exact version
 version: "2026-09-03"
 date-released: "2026-09-03"
 keywords:
