@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "VPN LIFE Dataset: daily VPN infrastructure measurements"
+abstract: >-
+  A daily, timestamped record of VPN infrastructure built by fetching the public
+  server lists that VPN providers publish and counting them per country. Covers
+  7 providers and 155 countries.
+  Every row carries its observation date. Unmeasured values are left empty.
+type: dataset
+authors:
+  - name: "VPN LIFE"
+    website: "https://vpn-life.com/"
+url: "https://vpn-life.com/data/"
+repository-artifact: "https://vpn-life.com/data/vpn-life-dataset.json"
+license: CC-BY-4.0
+version: "2026-09-03"
+date-released: "2026-09-03"
+keywords:
+  - VPN
+  - network measurement
+  - server infrastructure
+  - open data
+  - Japan

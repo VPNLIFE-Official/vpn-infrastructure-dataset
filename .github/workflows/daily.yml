@@ -1,0 +1,33 @@
+name: Refresh dataset
+
+# 毎日 vpn-life.com から取り直して、変わっていれば commit する。
+# ★ commit の履歴そのものが「毎日測っている」ことの裏付けになる。
+on:
+  schedule:
+    - cron: "30 21 * * *"   # 日本時間 06:30
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch the published files
+        run: python scripts/fetch.py
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "vpn-life-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No change today."
+          else
+            git commit -m "data: refresh $(date -u +%Y-%m-%d)"
+            git push
+          fi

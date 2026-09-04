@@ -1,0 +1,2 @@
+city,city_label,vpn,measurements,median_down_mbps,median_latency_ms,baseline_down_mbps,retention_pct,retention_basis,last_measured_date
+th-bangkok,バンコク,nordvpn,1,98.05,82.8,,,median-of-measurements,2026-08-28
