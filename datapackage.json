@@ -1,0 +1,333 @@
+{
+ "profile": "data-package",
+ "name": "vpn-infrastructure-dataset",
+ "title": "VPN LIFE Dataset",
+ "description": "Daily, timestamped measurements of VPN infrastructure: per-country server counts and load, provider totals, exchange rates, and city-level speed. Every row carries the date it was observed.",
+ "version": "2026-09-03",
+ "created": "2026-09-03T22:47:12.283292+00:00",
+ "homepage": "https://vpn-life.com/data/",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "title": "Creative Commons Attribution 4.0 International",
+   "path": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+  }
+ ],
+ "contributors": [
+  {
+   "title": "VPN LIFE",
+   "path": "https://vpn-life.com/",
+   "role": "author"
+  }
+ ],
+ "keywords": [
+  "vpn",
+  "network measurement",
+  "server load",
+  "internet speed",
+  "japan",
+  "open data"
+ ],
+ "temporal": {
+  "start": "2026-08-26",
+  "end": "2026-09-03"
+ },
+ "resources": [
+  {
+   "name": "country-servers",
+   "path": "data/vpn-life-country-servers.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 63482,
+   "rows": 2491,
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "country_code",
+      "type": "string"
+     },
+     {
+      "name": "servers",
+      "type": "integer"
+     }
+    ]
+   }
+  },
+  {
+   "name": "country-load",
+   "path": "data/vpn-life-country-load.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 24243,
+   "rows": 900,
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "country_code",
+      "type": "string"
+     },
+     {
+      "name": "load_pct",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "country-coverage",
+   "path": "data/vpn-life-country-coverage.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 180293,
+   "rows": 5624,
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "country_code",
+      "type": "string"
+     },
+     {
+      "name": "cities",
+      "type": "integer"
+     },
+     {
+      "name": "source_type",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "provider-daily",
+   "path": "data/vpn-life-provider-daily.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 2994,
+   "rows": 84,
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "metric",
+      "type": "string"
+     },
+     {
+      "name": "value",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "provider-current",
+   "path": "data/vpn-life-provider-current.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 678,
+   "rows": 7,
+   "schema": {
+    "fields": [
+     {
+      "name": "observed_date",
+      "type": "date"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "countries",
+      "type": "integer"
+     },
+     {
+      "name": "locations",
+      "type": "integer"
+     },
+     {
+      "name": "servers",
+      "type": "integer"
+     },
+     {
+      "name": "servers_claimed",
+      "type": "integer"
+     },
+     {
+      "name": "source_type",
+      "type": "string"
+     },
+     {
+      "name": "source_url",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "fx-daily",
+   "path": "data/vpn-life-fx-daily.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 2270,
+   "rows": 96,
+   "schema": {
+    "fields": [
+     {
+      "name": "date",
+      "type": "date"
+     },
+     {
+      "name": "currency",
+      "type": "string"
+     },
+     {
+      "name": "rate_per_usd",
+      "type": "number"
+     }
+    ]
+   }
+  },
+  {
+   "name": "speed-city",
+   "path": "data/vpn-life-speed-city.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 2303,
+   "rows": 28,
+   "schema": {
+    "fields": [
+     {
+      "name": "city",
+      "type": "string"
+     },
+     {
+      "name": "city_label",
+      "type": "string"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "mean_down_mbps",
+      "type": "number"
+     },
+     {
+      "name": "paired_measurements",
+      "type": "integer"
+     },
+     {
+      "name": "baseline_down_mbps",
+      "type": "number"
+     },
+     {
+      "name": "retention_pct",
+      "type": "number"
+     },
+     {
+      "name": "retention_basis",
+      "type": "string"
+     },
+     {
+      "name": "stat",
+      "type": "string"
+     },
+     {
+      "name": "verdict",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "speed-measurements",
+   "path": "data/vpn-life-speed-measurements.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 217,
+   "rows": 1,
+   "schema": {
+    "fields": [
+     {
+      "name": "city",
+      "type": "string"
+     },
+     {
+      "name": "city_label",
+      "type": "string"
+     },
+     {
+      "name": "vpn",
+      "type": "string"
+     },
+     {
+      "name": "measurements",
+      "type": "integer"
+     },
+     {
+      "name": "median_down_mbps",
+      "type": "number"
+     },
+     {
+      "name": "median_latency_ms",
+      "type": "number"
+     },
+     {
+      "name": "baseline_down_mbps",
+      "type": "number"
+     },
+     {
+      "name": "retention_pct",
+      "type": "number"
+     },
+     {
+      "name": "retention_basis",
+      "type": "string"
+     },
+     {
+      "name": "last_measured_date",
+      "type": "date"
+     }
+    ]
+   }
+  }
+ ]
+}

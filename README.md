@@ -108,6 +108,23 @@ See also `CITATION.cff` in this repository.
 
 ---
 
+## Machine-readable descriptors
+
+The schema is published in two standard formats so tools and registries can
+read it without a human in the loop. Both are regenerated whenever the data is.
+
+| File | Standard | Read by |
+|---|---|---|
+| `datapackage.json` | [Frictionless Data](https://specs.frictionlessdata.io/data-package/) | data.world, CKAN, OpenRefine, `frictionless` CLI |
+| `croissant.json` | [Croissant 1.0](http://mlcommons.org/croissant/) (ML Commons) | Google Dataset Search, Hugging Face, Kaggle |
+
+```bash
+pip install frictionless
+frictionless validate datapackage.json
+```
+
+---
+
 ## Requests
 
 If you are a journalist or researcher and need something these files do not

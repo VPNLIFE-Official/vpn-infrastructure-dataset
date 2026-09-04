@@ -1,0 +1,867 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "cr": "http://mlcommons.org/croissant/",
+  "sc": "https://schema.org/",
+  "data": {
+   "@id": "cr:data",
+   "@type": "@json"
+  },
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "extract": "cr:extract",
+  "field": "cr:field",
+  "fileObject": "cr:fileObject",
+  "containedIn": "cr:containedIn",
+  "column": "cr:column",
+  "recordSet": "cr:recordSet",
+  "source": "cr:source"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "vpn-infrastructure-dataset",
+ "description": "Daily, timestamped measurements of VPN infrastructure from the providers' own public server lists. 7 providers, 155 countries. Every row carries its observation date.",
+ "url": "https://vpn-life.com/data/",
+ "sameAs": "https://github.com/VPNLIFE-Official/vpn-infrastructure-dataset",
+ "license": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+ "version": "2026-09-03",
+ "datePublished": "2026-09-03",
+ "creator": {
+  "@type": "sc:Organization",
+  "name": "VPN LIFE",
+  "url": "https://vpn-life.com/"
+ },
+ "keywords": [
+  "vpn",
+  "network measurement",
+  "server load",
+  "internet speed",
+  "japan",
+  "open data"
+ ],
+ "citeAs": "VPN LIFE, “VPN LIFE Dataset (2026-09-03)”, https://vpn-life.com/data/, licensed under CC BY 4.0.",
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "repo",
+   "name": "repo",
+   "description": "This GitHub repository.",
+   "contentUrl": "https://github.com/VPNLIFE-Official/vpn-infrastructure-dataset",
+   "encodingFormat": "git+https",
+   "sha256": "main"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-country-servers",
+   "name": "vpn-life-country-servers",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-country-servers.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-country-load",
+   "name": "vpn-life-country-load",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-country-load.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-country-coverage",
+   "name": "vpn-life-country-coverage",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-country-coverage.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-provider-daily",
+   "name": "vpn-life-provider-daily",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-provider-daily.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-provider-current",
+   "name": "vpn-life-provider-current",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-provider-current.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-fx-daily",
+   "name": "vpn-life-fx-daily",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-fx-daily.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-speed-city",
+   "name": "vpn-life-speed-city",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-speed-city.csv",
+   "encodingFormat": "text/csv"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "vpn-life-speed-measurements",
+   "name": "vpn-life-speed-measurements",
+   "containedIn": {
+    "@id": "repo"
+   },
+   "contentUrl": "data/vpn-life-speed-measurements.csv",
+   "encodingFormat": "text/csv"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-country-servers_records",
+   "name": "vpn-life-country-servers",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-servers/date",
+     "name": "date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-servers"
+      },
+      "extract": {
+       "column": "date"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-servers/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-servers"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-servers/country_code",
+     "name": "country_code",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-servers"
+      },
+      "extract": {
+       "column": "country_code"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-servers/servers",
+     "name": "servers",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-servers"
+      },
+      "extract": {
+       "column": "servers"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-country-load_records",
+   "name": "vpn-life-country-load",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-load/date",
+     "name": "date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-load"
+      },
+      "extract": {
+       "column": "date"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-load/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-load"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-load/country_code",
+     "name": "country_code",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-load"
+      },
+      "extract": {
+       "column": "country_code"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-load/load_pct",
+     "name": "load_pct",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-load"
+      },
+      "extract": {
+       "column": "load_pct"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-country-coverage_records",
+   "name": "vpn-life-country-coverage",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-coverage/date",
+     "name": "date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-coverage"
+      },
+      "extract": {
+       "column": "date"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-coverage/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-coverage"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-coverage/country_code",
+     "name": "country_code",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-coverage"
+      },
+      "extract": {
+       "column": "country_code"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-coverage/cities",
+     "name": "cities",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-coverage"
+      },
+      "extract": {
+       "column": "cities"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-country-coverage/source_type",
+     "name": "source_type",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-country-coverage"
+      },
+      "extract": {
+       "column": "source_type"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-provider-daily_records",
+   "name": "vpn-life-provider-daily",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-daily/date",
+     "name": "date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-daily"
+      },
+      "extract": {
+       "column": "date"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-daily/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-daily"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-daily/metric",
+     "name": "metric",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-daily"
+      },
+      "extract": {
+       "column": "metric"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-daily/value",
+     "name": "value",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-daily"
+      },
+      "extract": {
+       "column": "value"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-provider-current_records",
+   "name": "vpn-life-provider-current",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/observed_date",
+     "name": "observed_date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "observed_date"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/countries",
+     "name": "countries",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "countries"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/locations",
+     "name": "locations",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "locations"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/servers",
+     "name": "servers",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "servers"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/servers_claimed",
+     "name": "servers_claimed",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "servers_claimed"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/source_type",
+     "name": "source_type",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "source_type"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-provider-current/source_url",
+     "name": "source_url",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-provider-current"
+      },
+      "extract": {
+       "column": "source_url"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-fx-daily_records",
+   "name": "vpn-life-fx-daily",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-fx-daily/date",
+     "name": "date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-fx-daily"
+      },
+      "extract": {
+       "column": "date"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-fx-daily/currency",
+     "name": "currency",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-fx-daily"
+      },
+      "extract": {
+       "column": "currency"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-fx-daily/rate_per_usd",
+     "name": "rate_per_usd",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-fx-daily"
+      },
+      "extract": {
+       "column": "rate_per_usd"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-speed-city_records",
+   "name": "vpn-life-speed-city",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/city",
+     "name": "city",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "city"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/city_label",
+     "name": "city_label",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "city_label"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/mean_down_mbps",
+     "name": "mean_down_mbps",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "mean_down_mbps"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/paired_measurements",
+     "name": "paired_measurements",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "paired_measurements"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/baseline_down_mbps",
+     "name": "baseline_down_mbps",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "baseline_down_mbps"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/retention_pct",
+     "name": "retention_pct",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "retention_pct"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/retention_basis",
+     "name": "retention_basis",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "retention_basis"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/stat",
+     "name": "stat",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "stat"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-city/verdict",
+     "name": "verdict",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-city"
+      },
+      "extract": {
+       "column": "verdict"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "vpn-life-speed-measurements_records",
+   "name": "vpn-life-speed-measurements",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/city",
+     "name": "city",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "city"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/city_label",
+     "name": "city_label",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "city_label"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/vpn",
+     "name": "vpn",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "vpn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/measurements",
+     "name": "measurements",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "measurements"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/median_down_mbps",
+     "name": "median_down_mbps",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "median_down_mbps"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/median_latency_ms",
+     "name": "median_latency_ms",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "median_latency_ms"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/baseline_down_mbps",
+     "name": "baseline_down_mbps",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "baseline_down_mbps"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/retention_pct",
+     "name": "retention_pct",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "retention_pct"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/retention_basis",
+     "name": "retention_basis",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "retention_basis"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "vpn-life-speed-measurements/last_measured_date",
+     "name": "last_measured_date",
+     "dataType": "sc:Date",
+     "source": {
+      "fileObject": {
+       "@id": "vpn-life-speed-measurements"
+      },
+      "extract": {
+       "column": "last_measured_date"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
