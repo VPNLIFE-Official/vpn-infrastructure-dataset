@@ -1,8 +1,8 @@
 observed_date,vpn,countries,locations,servers,servers_claimed,source_type,source_url
-2026-09-19,cyberghost,100,125,9974,,html,https://www.cyberghostvpn.com/vpn-server
-2026-09-19,expressvpn,113,213,,,html,https://www.expressvpn.com/vpn-server
-2026-09-19,mullvad,50,91,563,,api,https://api.mullvad.net/www/relays/all/
-2026-09-19,nordvpn,150,225,7893,,api,https://api.nordvpn.com/v1/servers/countries
-2026-09-19,private-internet-access,91,190,,,api,https://serverlist.piaservers.net/vpninfo/servers/v6
-2026-09-19,surfshark,100,142,,4500,api,https://api.surfshark.com/v4/server/clusters/generic
-2026-09-19,windscribe,72,75,,,api,https://assets.windscribe.com/serverlist/firefox/1/1
+2026-09-21,cyberghost,100,125,10072,,html,https://www.cyberghostvpn.com/vpn-server
+2026-09-21,expressvpn,113,213,,,html,https://www.expressvpn.com/vpn-server
+2026-09-21,mullvad,50,91,563,,api,https://api.mullvad.net/www/relays/all/
+2026-09-21,nordvpn,150,225,7892,,api,https://api.nordvpn.com/v1/servers/countries
+2026-09-21,private-internet-access,90,189,,,api,https://serverlist.piaservers.net/vpninfo/servers/v6
+2026-09-21,surfshark,100,142,,4500,api,https://api.surfshark.com/v4/server/clusters/generic
+2026-09-21,windscribe,72,75,,,api,https://assets.windscribe.com/serverlist/firefox/1/1
