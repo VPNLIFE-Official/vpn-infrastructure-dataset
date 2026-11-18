@@ -755,3 +755,13 @@ date,vpn,metric,value
 2026-11-15,mullvad,servers,570
 2026-11-15,private-internet-access,locations,215
 2026-11-15,windscribe,locations,75
+2026-11-16,cyberghost,locations,125
+2026-11-16,cyberghost,servers,9680
+2026-11-16,expressvpn,locations,213
+2026-11-16,mullvad,locations,91
+2026-11-16,mullvad,servers,570
+2026-11-16,nordvpn,locations,225
+2026-11-16,nordvpn,servers,6919
+2026-11-16,private-internet-access,locations,215
+2026-11-16,surfshark,locations,142
+2026-11-16,windscribe,locations,75
