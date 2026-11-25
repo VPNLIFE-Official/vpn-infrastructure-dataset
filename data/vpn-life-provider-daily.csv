@@ -825,3 +825,13 @@ date,vpn,metric,value
 2026-11-22,private-internet-access,locations,215
 2026-11-22,surfshark,locations,142
 2026-11-22,windscribe,locations,75
+2026-11-23,cyberghost,locations,126
+2026-11-23,cyberghost,servers,9911
+2026-11-23,expressvpn,locations,213
+2026-11-23,mullvad,locations,91
+2026-11-23,mullvad,servers,572
+2026-11-23,nordvpn,locations,225
+2026-11-23,nordvpn,servers,6900
+2026-11-23,private-internet-access,locations,208
+2026-11-23,surfshark,locations,142
+2026-11-23,windscribe,locations,75
